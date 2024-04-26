@@ -1,12 +1,9 @@
-function createRating(obj, weight) {
-    return (
-      obj.gameplay * weight.gameplay +
-      obj.design * weight.design +
-      obj.idea * weight.idea
-    );
-  }
-  function updateRating(array, id, rating) {
-    const index = array.findIndex((item) => item.id === id);
-    array[index].rating += rating;
-    return array;
-  }
+const config = require("./config");
+const makeRatingFile = require("./rating-file");
+const {createRating, updateRating} = require("./calculatons")
+module.exports = {
+  config,
+  makeRatingFile,
+  updateRating, 
+  createRating
+};
